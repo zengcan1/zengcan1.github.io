@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+
+    <!--设置欢迎页面-->
+    <!--设置了欢迎页面之后，当你访问这个webapp的时候，或者访问这个web站点的时候，
+    没有指定任何“资源路径”，这个时候会默认访问你的欢迎页面。-->
+    <!--路径不需要以“/”开始，并且路径默认从webapp的根下开始找。-->
+    <welcome-file-list>
+        <welcome-file>welcome</welcome-file>
+    </welcome-file-list>
+
+    <!--登录检查的过滤器，过滤所有的路径。-->
+    <filter>
+        <filter-name>loginFilter</filter-name>
+        <filter-class>com.zengcan.ots.web.filter.LoginCheckFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>loginFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!--将Servlet类配置到web.xml文件当中-->
+    <!--在web.xml文件中完成Servlet类的注册。（请求路径和Servlet之间对应起来）-->
+    <!--servlet描述信息-->
+    <!--查看课程-->
+    <!--<servlet>
+        <servlet-name>classes</servlet-name>
+        &lt;!&ndash;这个位置必须是带有包名的全限定类名&ndash;&gt;
+        &lt;!&ndash; Tomcat服务器通过反射机制，调用无参数构造方法。创建Servlet对象。
+    (web.xml文件中配置的Servlet类对应的对象。&ndash;&gt;
+        <servlet-class>com.zengcan.ots.web.action.OpenEnterpriseClassesServlet</servlet-class>
+    </servlet>
+    &lt;!&ndash;servlet映射信息&ndash;&gt;
+    <servlet-mapping>
+        <servlet-name>classes</servlet-name>
+        &lt;!&ndash;web.xml文件中的这个路径也是以“/”开始的，但是不需要加项目名&ndash;&gt;
+        <url-pattern>/classes</url-pattern>
+    </servlet-mapping>-->
+
+    <!--课程管理-->
+   <!-- <servlet>
+        <servlet-name>course_management</servlet-name>
+        <servlet-class>com.zengcan.ots.old.CourseManagementServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>course_management</servlet-name>
+        <url-pattern>/course_management</url-pattern>
+    </servlet-mapping>-->
+
+    <!-- 添加课程 -->
+    <!--<servlet>
+        <servlet-name>add_a_course</servlet-name>
+        <servlet-class>com.zengcan.ots.old.AddCourseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>add_a_course</servlet-name>
+        <url-pattern>/add_a_course</url-pattern>
+    </servlet-mapping>-->
+
+    <!-- 上传课程基本信息-->
+    <!--<servlet>
+        <servlet-name>upload_course_information</servlet-name>
+        <servlet-class>com.zengcan.ots.old.UploadCourseInformationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>upload_course_information</servlet-name>
+        <url-pattern>/upload_course_information</url-pattern>
+    </servlet-mapping>-->
+
+    <!--视频文件上传-->
+   <!-- <servlet>
+        <servlet-name>FileUploadServlet</servlet-name>
+        <servlet-class>com.zengcan.ots.old.FileUploadServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FileUploadServlet</servlet-name>
+        <url-pattern>/file_upload</url-pattern>
+    </servlet-mapping>-->
+
+    <!-- 删除课程 -->
+    <!--<servlet>
+        <servlet-name>delete_a_course</servlet-name>
+        <servlet-class>com.zengcan.ots.old.DeleteCourseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>delete_a_course</servlet-name>
+        <url-pattern>/delete_a_course</url-pattern>
+    </servlet-mapping>-->
+
+    <!--编辑课程信息-->
+    <!--<servlet>
+        <servlet-name>edit_course_information</servlet-name>
+        <servlet-class>com.zengcan.ots.old.EditCourseInformationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>edit_course_information</servlet-name>
+        <url-pattern>/edit_course_information</url-pattern>
+    </servlet-mapping>-->
+
+    <!--修改课程-->
+    <!--<servlet>
+        <servlet-name>modify_the_course</servlet-name>
+        <servlet-class>com.zengcan.ots.old.ModifyTheCourseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>modify_the_course</servlet-name>
+        <url-pattern>/modify_the_course</url-pattern>
+    </servlet-mapping>-->
+
+    <!--修改课程视频-->
+    <!--<servlet>
+        <servlet-name>modify_video</servlet-name>
+        <servlet-class>com.zengcan.ots.old.ModifyVideoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>modify_video</servlet-name>
+        <url-pattern>/modify_video</url-pattern>
+    </servlet-mapping>-->
+
+    <!--查询课程基本信息-->
+   <!-- <servlet>
+        <servlet-name>query_course</servlet-name>
+        <servlet-class>com.zengcan.ots.old.QueryCourseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>query_course</servlet-name>
+        <url-pattern>/query_course</url-pattern>
+    </servlet-mapping>-->
+
+    <!--开始学习/播放视频-->
+    <!--<servlet>
+        <servlet-name>play_video</servlet-name>
+        <servlet-class>com.zengcan.ots.old.PlayVideoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>play_video</servlet-name>
+        <url-pattern>/play/video</url-pattern>
+    </servlet-mapping>-->
+
+
+</web-app>
